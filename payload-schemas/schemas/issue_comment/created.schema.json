@@ -7,6 +7,7 @@
     "action": { "type": "string", "enum": ["created"] },
     "issue": {
       "type": "object",
+      "description": "The [issue](https://docs.github.com/en/rest/reference/issues) the comment belongs to.",
       "required": [
         "url",
         "repository_url",
@@ -103,6 +104,7 @@
     },
     "comment": {
       "type": "object",
+      "description": "The [comment](https://docs.github.com/en/rest/reference/issues#comments) itself.",
       "required": [
         "url",
         "html_url",

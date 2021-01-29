@@ -4,9 +4,14 @@
   "type": "object",
   "required": ["action", "issue", "repository", "sender"],
   "properties": {
-    "action": { "type": "string", "enum": ["closed"] },
+    "action": {
+      "type": "string",
+      "enum": ["closed"],
+      "description": "The action that was performed."
+    },
     "issue": {
       "type": "object",
+      "description": "The [issue](https://docs.github.com/en/rest/reference/issues) itself.",
       "required": [
         "url",
         "repository_url",
@@ -96,13 +101,9 @@
       },
       "additionalProperties": false
     },
-    "label": { "$ref": "common/label.schema.json" },
-    "assignee": {
-      "oneOf": [{ "$ref": "common/user.schema.json" }, { "type": "null" }]
-    },
-    "assignees": {
-      "type": "array",
-      "items": { "$ref": "common/user.schema.json" }
+    "label": {
+      "$ref": "common/label.schema.json",
+      "description": "The optional label that was added or removed from the issue."
     },
     "repository": { "$ref": "common/repository.schema.json" },
     "sender": { "$ref": "common/user.schema.json" },

@@ -5,7 +5,7 @@
   "required": ["action", "number", "pull_request", "repository", "sender"],
   "properties": {
     "action": { "type": "string", "enum": ["converted_to_draft"] },
-    "number": { "type": "integer" },
+    "number": { "type": "integer", "description": "The pull request number." },
     "pull_request": {
       "type": "object",
       "required": [
@@ -199,8 +199,6 @@
       },
       "additionalProperties": false
     },
-    "label": { "$ref": "common/label.schema.json" },
-    "assignee": { "$ref": "common/user.schema.json" },
     "repository": { "$ref": "common/repository.schema.json" },
     "installation": { "$ref": "common/installation-lite.schema.json" },
     "organization": { "$ref": "common/organization.schema.json" },
